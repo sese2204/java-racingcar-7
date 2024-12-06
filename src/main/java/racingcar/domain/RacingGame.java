@@ -33,6 +33,21 @@ public class RacingGame {
         }
     }
 
+    public void findWinningCars() {
+        int maxPosition = findMaxPosition();
+        winningCars.add(cars.get(maxPosition));
+    }
+
+    private int findMaxPosition() {
+        int maxPosition = -1;
+        for (Car car : cars) {
+            if (car.getPosition() > maxPosition) {
+                maxPosition = car.getPosition();
+            }
+        }
+        return maxPosition;
+    }
+
     private Boolean isValidNumber(int number) {
         return number >= RacingGameConstant.TARGET_NUMBER.getValue();
     }
