@@ -1,10 +1,13 @@
 package racingcar.domain;
 
+import racingcar.exception.ExceptionMessages;
+
 public class Car {
-    private String carName;
+    private final String carName;
     private int position;
 
     public Car(String carName, int position) {
+        validateCarName(carName);
         this.carName = carName;
         this.position = position;
     }
@@ -19,5 +22,11 @@ public class Car {
 
     public void goFoward() {
         position++;
+    }
+
+    private void validateCarName(String carName) {
+        if (carName.isEmpty() || carName.length() > 5) {
+            throw new IllegalArgumentException(ExceptionMessages.ERROR_NAME_LENGTH.getMessage());
+        }
     }
 }
