@@ -13,6 +13,13 @@ public class InputView {
         return input;
     }
 
+    public int requestTryCount() {
+        System.out.println(INPUT_MESSAGE_TRYCOUNT);
+        String input = Console.readLine();
+        validateInput(input);
+        return Integer.parseInt(input);
+    }
+
     private void validateInput(String input) {
         if (input == null || input.trim().isEmpty()) {
             throw new IllegalArgumentException("[ERROR] 입력 값이 비어있습니다.");
