@@ -3,7 +3,8 @@ package racingcar.constant;
 public enum RacingGameConstant {
     MAX_RANDOM_NUMBER(9),
     MIN_RANDOM_NUMBER(0),
-    TARGET_NUMBER(4);
+    TARGET_NUMBER(4),
+    DEFAULT_POSITOIN(0);
 
     private int value;
 
